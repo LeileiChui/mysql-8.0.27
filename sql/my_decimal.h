@@ -415,4 +415,5 @@ inline int my_decimal_intg(const my_decimal *a) { return decimal_intg(a); }
 
 void my_decimal_trim(ulong *precision, uint *scale);
 
+uint8 get_actual_fraction_dec_val(my_decimal *dec_value);
 #endif  // MY_DECIMAL_INCLUDED

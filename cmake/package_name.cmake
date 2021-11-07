@@ -89,7 +89,8 @@ MACRO(GET_PACKAGE_FILE_NAME Var)
       STRING(REGEX MATCH
         "ProductVersion:[\n\t ]*([0-9]+)\\.([0-9]+)" UNUSED ${SW_VERS_PRODUCTVERSION})
       IF(NOT CMAKE_MATCH_1 OR NOT CMAKE_MATCH_2)
-        MESSAGE(FATAL_ERROR "Could not run sw_vers")
+#        MESSAGE(FATAL_ERROR "Could not run sw_vers")
+         MESSAGE("CMAKE_MATCH_1 " ${CMAKE_MATCH_1} " CMAKE_MATCH_2 " ${CMAKE_MATCH_2})
       ENDIF()
 
       SET(DEFAULT_PLATFORM "macos${CMAKE_MATCH_1}.${CMAKE_MATCH_2}")

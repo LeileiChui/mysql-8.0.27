@@ -81,6 +81,7 @@
 #include "sql/system_variables.h"
 #include "sql_string.h"
 #include "tztime.h"  // convert_time_zone_displacement
+#include "sql/oracle_compatibility/to_number.h"
 
 /**
   @addtogroup GROUP_PARSER
@@ -1330,9 +1331,11 @@ Item *Create_sp_func::create(THD *thd, LEX_STRING db, LEX_STRING name,
   This can't be constexpr because
   - Sun Studio does not allow the Create_func pointer to be constexpr.
 */
+
 static const std::pair<const char *, Create_func *> func_array[] = {
     {"ABS", SQL_FN(Item_func_abs, 1)},
     {"ACOS", SQL_FN(Item_func_acos, 1)},
+    {"TO_NUMBER", SQL_FN_V(Item_func_to_number, 1,2)},
     {"ADDTIME", SQL_FN(Item_func_add_time, 2)},
     {"AES_DECRYPT", SQL_FN_V(Item_func_aes_decrypt, 2, 3)},
     {"AES_ENCRYPT", SQL_FN_V(Item_func_aes_encrypt, 2, 3)},

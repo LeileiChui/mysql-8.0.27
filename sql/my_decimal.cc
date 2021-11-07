@@ -274,6 +274,11 @@ int str2my_decimal(uint mask, const char *from, size_t length,
   check_result_and_overflow(mask, err, decimal_value);
   return err;
 }
+uint8 get_actual_fraction_dec_val(my_decimal *dec_value) {
+  int actual_frac = decimal_actual_fraction(dec_value);
+  uint8 dec_frac = (actual_frac < DECIMAL_MAX_SCALE ? actual_frac : DECIMAL_MAX_SCALE);
+  return dec_frac;
+}
 
 /**
   Convert lldiv_t value to my_decimal value.

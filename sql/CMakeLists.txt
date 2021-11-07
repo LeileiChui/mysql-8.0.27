@@ -627,6 +627,9 @@ SET(SQL_SHARED_SOURCES
   window_iterators.cc
   xa.cc
   daemon_proxy_keyring/daemon_proxy_keyring.cc
+  oracle_compatibility/ora_format.cc
+  oracle_compatibility/to_number.cc
+  oracle_compatibility/convert_number.cc
   )
 
 IF(BUILD_IS_SINGLE_CONFIG)

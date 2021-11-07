@@ -9659,6 +9659,25 @@ ER_VALUE_OUT_OF_RANGE
 
 
 ################################################################################
+# TO_NUMBER error messages (error log): Starting at 6000
+################################################################################
+
+start-error-number 6000
+
+ER_TO_NUM_OUT_OF_RANGE
+  eng "TO_NUMBER value out of range: %s"
+
+ER_TO_NUM_VALUE_INVALID
+  eng "TO_NUMBER value invalid: %s"
+
+ER_TO_NUM_FORMAT_INVALID
+  eng "TO_NUMBER format invalid: %s"
+
+#
+# End of TO_NUMBER error messages
+#
+
+################################################################################
 # Error numbers 5000 to 5999 are reserved for X Plugin. Please do not use
 # them for other error messages.
 ################################################################################
